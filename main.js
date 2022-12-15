@@ -22,28 +22,28 @@ camera.position.setX(100);
 
 
 renderer.render( scene, camera )
-const moonTexture = new THREE.TextureLoader().load('/images/moonmap.jpg');
-const moonTexture2 = new THREE.TextureLoader().load('/images/moon2.jpg');
-const moonRocks = new THREE.TextureLoader().load('/images/moonrocks.jpg.jpg.jpg')
-const earthTexture = new THREE.TextureLoader().load('/images/earthjan.jpg');
-const earthSpec = new THREE.TextureLoader().load('/images/earthspec.jpg');
-const earthNight = new THREE.TextureLoader().load('/images/earthnight.jpg');
-const earthClouds = new THREE.TextureLoader().load('/images/clouds.png');
-const sunTexture = new THREE.TextureLoader().load('/images/sun.jpg');
+const moonTexture = new THREE.TextureLoader().load('images/moonmap.jpg');
+const moonTexture2 = new THREE.TextureLoader().load('images/moon2.jpg');
+const moonRocks = new THREE.TextureLoader().load('images/moonrocks.jpg.jpg.jpg')
+const earthTexture = new THREE.TextureLoader().load('images/earthjan.jpg');
+const earthSpec = new THREE.TextureLoader().load('images/earthspec.jpg');
+const earthNight = new THREE.TextureLoader().load('images/earthnight.jpg');
+const earthClouds = new THREE.TextureLoader().load('images/clouds.png');
+const sunTexture = new THREE.TextureLoader().load('images/sun.jpg');
 const sunTexture2 = new THREE.TextureLoader().load('/images/sun2.jpg');
 
-const milkyWay = new THREE.TextureLoader().load('/images/milkyway.jpg');
-const mercuryTexture = new THREE.TextureLoader().load('/images/mercury.jpg');
-const venusTexture = new THREE.TextureLoader().load('/images/jupiter.jpg');
-const marsTexture = new THREE.TextureLoader().load('/images/mars.jpg');
-const saturnTexture = new THREE.TextureLoader().load('/images/saturn.jpg');
-const jupiterTexture = new THREE.TextureLoader().load('/images/jupiter.jpg');
-const uranusTexture = new THREE.TextureLoader().load('/images/uranus.jpg');
-const neptuneTexture = new THREE.TextureLoader().load('/images/neptune.jpg');
-const saturnRingTexture = new THREE.TextureLoader().load('/images/saturn_ring.png');
-const alpha = new THREE.TextureLoader().load('/images/alpha.jpg');
-const alpha2 = new THREE.TextureLoader().load('/images/alpha2.jpg');
-const alpha3 = new THREE.TextureLoader().load('/images/alpha3.jpg');
+const milkyWay = new THREE.TextureLoader().load('images/milkyway.jpg');
+const mercuryTexture = new THREE.TextureLoader().load('images/mercury.jpg');
+const venusTexture = new THREE.TextureLoader().load('images/jupiter.jpg');
+const marsTexture = new THREE.TextureLoader().load('images/mars.jpg');
+const saturnTexture = new THREE.TextureLoader().load('images/saturn.jpg');
+const jupiterTexture = new THREE.TextureLoader().load('images/jupiter.jpg');
+const uranusTexture = new THREE.TextureLoader().load('images/uranus.jpg');
+const neptuneTexture = new THREE.TextureLoader().load('images/neptune.jpg');
+const saturnRingTexture = new THREE.TextureLoader().load('images/saturn_ring.png');
+const alpha = new THREE.TextureLoader().load('images/alpha.jpg');
+const alpha2 = new THREE.TextureLoader().load('images/alpha2.jpg');
+const alpha3 = new THREE.TextureLoader().load('images/alpha3.jpg');
 scene.background = milkyWay;
 
 const geometry = new THREE.SphereGeometry( 4, 60, 60 )
