@@ -23,14 +23,16 @@
   }), 3000);
 
 </script> -->
-<embed src="serahstheme.mp3" id="music" loop="true" volume="20%" autostart="true" width="0" height="0">
+<audio autoplay src="serahstheme.mp3" id="music" loop="true" autostart="true" width="0" height="0"></audio>
     <canvas id="bg"></canvas>
     
-    <script>$(document).on('load',function(){
-    $('#music').volume = ".25";
-    })
-
-    }</script> 
+    <script>
+      function volume(){
+     let audio = document.getElementById('music');
+     audio.volume = '.30';
+      }
+      volume();
+     </script> 
     <script type="module" src="main.js"></script>
   </body>
 </html>
