@@ -16,25 +16,26 @@ const renderer = new THREE.WebGLRenderer({
 
 renderer.setPixelRatio( window.devicePixelRatio );
 renderer.setSize( window.innerWidth, window.innerHeight );
-camera.position.setZ(800);
-camera.position.setY(350);
-camera.position.setX(100);
+camera.position.setZ(400);
+camera.position.setY(-100);
+camera.position.setX(600);
 
 
 renderer.render( scene, camera )
 const moonTexture = new THREE.TextureLoader().load('images/moonmap.jpg');
 const moonTexture2 = new THREE.TextureLoader().load('images/moon2.jpg');
 const moonRocks = new THREE.TextureLoader().load('images/moonrocks.jpg.jpg.jpg')
-const earthTexture = new THREE.TextureLoader().load('images/earthjan.jpg');
+const earthTexture = new THREE.TextureLoader().load('images/8kearth.jpg');
 const earthSpec = new THREE.TextureLoader().load('images/earthspec.jpg');
 const earthNight = new THREE.TextureLoader().load('images/earthnight.jpg');
-const earthClouds = new THREE.TextureLoader().load('images/clouds.png');
+const earthClouds = new THREE.TextureLoader().load('images/clouds2.jpg');
+
 const sunTexture = new THREE.TextureLoader().load('images/sun.jpg');
 const sunTexture2 = new THREE.TextureLoader().load('/images/sun2.jpg');
 
 const milkyWay = new THREE.TextureLoader().load('images/milkyway.jpg');
 const mercuryTexture = new THREE.TextureLoader().load('images/mercury.jpg');
-const venusTexture = new THREE.TextureLoader().load('images/jupiter.jpg');
+const venusTexture = new THREE.TextureLoader().load('images/venus.jpg');
 const marsTexture = new THREE.TextureLoader().load('images/mars.jpg');
 const saturnTexture = new THREE.TextureLoader().load('images/saturn.jpg');
 const jupiterTexture = new THREE.TextureLoader().load('images/jupiter.jpg');
@@ -45,6 +46,7 @@ const alpha = new THREE.TextureLoader().load('images/alpha.jpg');
 const alpha2 = new THREE.TextureLoader().load('images/alpha2.jpg');
 const alpha3 = new THREE.TextureLoader().load('images/alpha3.jpg');
 scene.background = milkyWay;
+const starfieldTexture = new THREE.TextureLoader().load("images/galaxy_starfield.png");
 
 const geometry = new THREE.SphereGeometry( 4, 60, 60 )
 const material = new THREE.MeshStandardMaterial( { 
@@ -56,8 +58,7 @@ const material = new THREE.MeshStandardMaterial( {
 	clearcoat: 0.1, 
  });
 const moon = new THREE.Mesh( geometry, material )
-moon.position.setX(320)
-moon.position.setY(20)
+moon.position.set(400, 20, 40)
 scene.add(moon)
 
 const geometry2 = new THREE.SphereGeometry( 25, 50, 50)
@@ -71,7 +72,7 @@ const material2 = new THREE.MeshStandardMaterial( {
 } );
 const earth = new THREE.Mesh( geometry2, material2 )
 earth.position.z = 30;
-earth.position.setX(350)
+earth.position.setX(450)
 scene.add(earth)
 
 const geometry3 = new THREE.SphereGeometry( 400, 64, 32)
@@ -88,7 +89,7 @@ sun.position.z = 30;
 sun.position.setX(-450)
 scene.add(sun)
 
-const geometry4 = new THREE.SphereGeometry( 26, 55, 55)
+const geometry4 = new THREE.SphereGeometry( 27, 64, 32)
 const material4 = new THREE.MeshStandardMaterial( { 
 	map: earthClouds,
 	sheen: 0.3,
@@ -96,15 +97,15 @@ const material4 = new THREE.MeshStandardMaterial( {
 	clearcoat: 0.1, 
 	
 });
-material4.opacity = 0.65,
+material4.opacity = .80;
 material4.transparent = true;
 const clouds = new THREE.Mesh( geometry4, material4 )
 clouds.position.z = 30;
-clouds.position.setX(350)
+clouds.position.setX(450)
 scene.add(clouds)
 
 
-const geometry5 = new THREE.SphereGeometry( 10, 50, 50)
+const geometry5 = new THREE.SphereGeometry( 10, 50, 32)
 const material5 = new THREE.MeshStandardMaterial( { 
 	map: mercuryTexture,
 	sheen: 0.3,
@@ -112,8 +113,8 @@ const material5 = new THREE.MeshStandardMaterial( {
 	clearcoat: 0.1, 
 } );
 const mercury = new THREE.Mesh( geometry5, material5 )
-mercury.position.z = 150;
-mercury.position.setX(-10)
+mercury.position.z = -250;
+mercury.position.setX(-250)
 scene.add(mercury)
 
 
@@ -142,7 +143,7 @@ const material7 = new THREE.MeshStandardMaterial( {
 } );
 const mars = new THREE.Mesh( geometry7, material7 )
 mars.position.z = 400;
-mars.position.setX(500)
+mars.position.setX(650)
 mars.applyQuaternion(quaternion)
 quaternion.setFromAxisAngle( mars, Math.PI / 4 );
 
@@ -156,8 +157,8 @@ const material8 = new THREE.MeshStandardMaterial( {
 	clearcoat: 0.1, 
 } );
 const jupiter = new THREE.Mesh( geometry8, material8)
-jupiter.position.z = 500;
-jupiter.position.setX(750)
+jupiter.position.z = 700;
+jupiter.position.setX(900)
 scene.add(jupiter)
 
 const geometry9 = new THREE.SphereGeometry( 30, 50, 50)
@@ -168,8 +169,8 @@ const material9 = new THREE.MeshStandardMaterial( {
 	clearcoat: 0.1, 
 } );
 const saturn = new THREE.Mesh( geometry9, material9)
-saturn.position.z = 300;
-saturn.position.setX(1100)
+saturn.position.z = 700;
+saturn.position.setX(1200)
 scene.add(saturn)
 
 const saturnRingGeometry = new THREE.RingGeometry( 60, 35, 38 );
@@ -182,7 +183,7 @@ const saturnRingMaterial = new THREE.MeshStandardMaterial( {
 saturnRingMaterial.opacity = 0.75,
 saturnRingMaterial.transparent = true;
 const saturnRing = new THREE.Mesh( saturnRingGeometry, saturnRingMaterial)
-saturnRing.position.set(1100,0,300);
+saturnRing.position.set(1200,0,700);
 saturnRing.rotateX(90)
 
 scene.add(saturnRing)
@@ -195,8 +196,8 @@ const material10 = new THREE.MeshStandardMaterial( {
 	clearcoat: 0.1, 
 } );
 const uranus = new THREE.Mesh( geometry10, material10)
-uranus.position.z = -400;
-uranus.position.setX(1520)
+uranus.position.z = 800;
+uranus.position.setX(1620)
 scene.add(uranus)
 
 const geometry11 = new THREE.SphereGeometry( 20, 50, 50)
@@ -207,7 +208,7 @@ const material11 = new THREE.MeshStandardMaterial( {
 	clearcoat: 0.1, 
 } );
 const neptune = new THREE.Mesh( geometry11, material11)
-neptune.position.z = 30;
+neptune.position.z = 70;
 neptune.position.setX(1800)
 scene.add(neptune)
 
@@ -227,6 +228,17 @@ ort.position.z = 30;
 ort.position.setX(500)
 scene.add(ort)
 
+var starGeometry = new THREE.SphereGeometry(2000, 50, 50);
+var starMaterial = new THREE.MeshPhongMaterial({
+  map: starfieldTexture,
+  side: THREE.DoubleSide,
+  shininess: 0
+});
+starMaterial.opacity = 0.7;
+starMaterial.transparent = true; 
+var starField = new THREE.Mesh(starGeometry, starMaterial);
+scene.add(starField);
+
 
 
 // lighting
@@ -235,6 +247,8 @@ scene.add(ort)
 
 const ambientLight = new THREE.AmbientLightProbe(0xFFFFFF, 0.7);
 ambientLight.position.set(-450, 100, 30)
+
+var focus = new THREE.Vector3(450,100,0);
 
 const directionalLight = new THREE.DirectionalLight(0xFFFFFF, .2);
 directionalLight.position.set(-400, 100, 0);
@@ -265,11 +279,11 @@ scene.add( directionalLight.target );
 
 // orbit control
 const controls = new OrbitControls(camera, renderer.domElement); 
-			controls.target.set(-450, 0, 30);
+			controls.target.set(350, -30, 50);
       controls.dampingFactor = 0.15;
       controls.enableDamping = true;
       controls.autoRotate = true;
-      controls.autoRotateSpeed = 0.5;
+      controls.autoRotateSpeed = 0.1;
 function addStars() {
 	const geometry = new THREE.SphereGeometry(0.25, 24, 24);
 	const material = new THREE.MeshStandardMaterial( {color: 0xFFFFFF} )
@@ -284,43 +298,82 @@ function addStars() {
 
 }
 
-Array(3000).fill().forEach(addStars)
+Array(1000).fill().forEach(addStars)
 
 
 
 // textures
 // const bgTexture = new THREE.TextureLoader().load('space.jpg');
 // scene.background(bgTexture)
+let r = 1100;
+let theta = 50;
+let theta2 = 0;
+let dTheta = 5 * Math.PI / 10000  * - 1
+let dTheta2 = 15 * Math.PI / 10000  * - 1
 
 // recursion to repeat animation and register changes between frames
 function animate() {
 	requestAnimationFrame( animate );
-	
+	const dx = 0.10;
+	const dy = 0.30;  
+	const dz =  0.3;
+
+	theta += dTheta
+	theta2 += dTheta2
+
 	moon.rotation.x += 0.0001;
 	moon.rotation.y += 0.0005;
-	moon.rotation.z += 0.001;
-	earth.rotation.x += 0.000005;
-	earth.rotation.y += 0.0001;
-	earth.rotation.z += 0.00001;
+	moon.rotation.z += 0.004;
+	moon.position.x = 1230 * Math.cos(theta + 20)
+	moon.position.z = 1230 * Math.sin(theta + 20) 
+
+
+	earth.rotation.x += 0.005;
+	earth.rotation.y += 0.005;
+	earth.rotation.z += 0.001;
+	earth.position.x = 1200 * Math.cos(theta + 20)
+	earth.position.z = 1200 * Math.sin(theta + 20)
 	clouds.rotation.x += 0.0010
-	clouds.rotation.y += 0.0001;
+	clouds.rotation.z += 0.005;
+	clouds.position.x =  1200 * Math.cos(theta + 20) 
+	clouds.position.z = 1200 * Math.sin(theta + 20)
 	sun.rotation.x = 0;
-	sun.rotation.y = 0;
+	sun.rotation.y = 1;
 	sun.rotation.z = 0;
   venus.rotation.x += 0.000005;
 	venus.rotation.y += 0.005;
 	venus.rotation.z += 0.00001;
-	mercury.rotation.x += 0.000005;
-	mercury.rotation.y += 0.005;
-	mercury.rotation.z += 0.00001;
-	mars.translateX += 10;
-	mars.translateZ += 30;
-	saturn.rotation.x += 0.000005;
+	venus.position.x = 1100 * Math.cos(theta)
+	venus.position.z = 800 * Math.sin(theta)
+	mercury.rotation.x += 0.00005;
+	mercury.rotation.y += 0.0005
+	mercury.rotation.z += 0.0001;
+	mercury.position.x = 900 * Math.cos(theta2)
+	mercury.position.z = 700 * Math.sin(theta2)
+	mars.position.x = 1200 * Math.cos(theta + 5) 
+	mars.position.z = 1200 * Math.sin(theta + 5) 
+	saturn.rotation.x += 0.0005;
 	saturn.rotation.y += 0.005;
 	saturn.rotation.z += 0.00001;	
-	neptune.rotation.z += 0.010
-	saturnRing.rotation.z  += 0.005;
+	saturn.position.x = 1400 * Math.cos(theta) 
+	saturn.position.z = 1400 * Math.sin(theta)
+	neptune.rotation.z += 0.010;
+	neptune.position.x = 1800 * Math.cos(theta + 10) 
+	neptune.position.z = 1800 * Math.sin(theta + 10)
+	uranus.position.x = 2000 * Math.cos(theta) 
+	uranus.position.z = 1800 * Math.sin(theta)  
+	saturnRing.rotation.z += 0.005;
 	saturn.rotation.y += 0.001;
+	saturnRing.position.x = 1400 * Math.cos(theta) 
+	saturnRing.position.z = 1400 * Math.sin(theta) 
+	jupiter.position.x = 1900 * Math.cos(theta + 5) 
+	jupiter.position.z = 1900 * Math.sin(theta + 5) 
+  starField.position.x += 0.05
+	starField.position.z += 0.05
+	camera.position.x += dx;
+  camera.position.y += dy;
+  camera.position.z += dz;
+	camera.lookAt(focus);
 
 	controls.update()
 	renderer.render( scene, camera );
