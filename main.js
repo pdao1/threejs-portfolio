@@ -81,9 +81,7 @@ const material = new THREE.MeshStandardMaterial( {
 	map: moonTexture2, 
 	bumpMap: moonRocks, 
 	bumpScale: 0.30,
-	sheen: 0.3,
-	sheenRoughness: 0.75,
-	clearcoat: 0.1, 
+
  });
 const moon = new THREE.Mesh( geometry, material )
 moon.position.set(400, 20, 40)
@@ -95,9 +93,6 @@ const material2 = new THREE.MeshStandardMaterial( {
 	map: earthTexture, 
 	bumpMap: moonRocks,
 	bumpScale: 0.05,
-	sheen: 0.3,
-	sheenRoughness: 0.75,
-	clearcoat: 0.1, 
 } );
 const earth = new THREE.Mesh( geometry2, material2 )
 earth.position.z = 30;
@@ -110,9 +105,6 @@ const material3 = new THREE.MeshStandardMaterial( {
 	map: sunTexture,
 	bumpMap: sunTexture2,
 	bumpScale: 0.05,
-	sheen: 0.7,
-	sheenRoughness: 0.75,
-	clearcoat: 0.4, 
 } );
 const sun = new THREE.Mesh( geometry3, material3 )
 sun.position.z = 30;
@@ -123,9 +115,7 @@ scene.add(sun)
 const geometry4 = new THREE.SphereGeometry( 27, 64, 32)
 const material4 = new THREE.MeshStandardMaterial( { 
 	map: earthClouds,
-	sheen: 0.3,
-	sheenRoughness: 0.75,
-	clearcoat: 0.1, 
+
 	
 });
 material4.opacity = .80;
@@ -140,9 +130,7 @@ scene.add(clouds)
 const geometry5 = new THREE.SphereGeometry( 10, 50, 32)
 const material5 = new THREE.MeshStandardMaterial( { 
 	map: mercuryTexture,
-	sheen: 0.3,
-	sheenRoughness: 0.75,
-	clearcoat: 0.1, 
+
 } );
 const mercury = new THREE.Mesh( geometry5, material5 )
 mercury.position.z = -250;
@@ -154,9 +142,7 @@ scene.add(mercury)
 const geometry6 = new THREE.SphereGeometry( 20, 50, 50)
 const material6 = new THREE.MeshStandardMaterial( { 
 	map: venusTexture,
-	sheen: 0.3,
-	sheenRoughness: 0.75,
-	clearcoat: 0.1, 
+
 } );
 const venus = new THREE.Mesh( geometry6, material6 )
 venus.position.z = 10;
@@ -169,9 +155,7 @@ const quaternion = new THREE.Quaternion();
 const geometry7 = new THREE.SphereGeometry( 25, 50, 50)
 const material7 = new THREE.MeshStandardMaterial( { 
 	map: marsTexture,
-	sheen: 0.3,
-	sheenRoughness: 0.75,
-	clearcoat: 0.1, 
+
 } );
 const mars = new THREE.Mesh( geometry7, material7 )
 mars.position.z = 400;
@@ -185,9 +169,7 @@ scene.add(mars)
 const geometry8 = new THREE.SphereGeometry( 50, 50, 50)
 const material8 = new THREE.MeshStandardMaterial( { 
 	map: jupiterTexture,
-	sheen: 0.3,
-	sheenRoughness: 0.75,
-	clearcoat: 0.1, 
+
 } );
 const jupiter = new THREE.Mesh( geometry8, material8)
 jupiter.position.z = 700;
@@ -199,9 +181,7 @@ scene.add(jupiter)
 const geometry9 = new THREE.SphereGeometry( 30, 50, 50)
 const material9 = new THREE.MeshStandardMaterial( { 
 	map: saturnTexture,
-	sheen: 0.3,
-	sheenRoughness: 0.75,
-	clearcoat: 0.1, 
+
 } );
 const saturn = new THREE.Mesh( geometry9, material9)
 saturn.position.z = 700;
@@ -212,9 +192,7 @@ scene.add(saturn)
 const saturnRingGeometry = new THREE.RingGeometry( 60, 35, 38 );
 const saturnRingMaterial = new THREE.MeshStandardMaterial( { 
 	map: saturnTexture,
-	sheen: 0.3,
-	sheenRoughness: 0.75,
-	clearcoat: 0.1, 
+
 } );
 saturnRingMaterial.opacity = 0.75,
 saturnRingMaterial.transparent = true;
@@ -226,9 +204,7 @@ scene.add(saturnRing)
 const geometry10 = new THREE.SphereGeometry( 15, 50, 50)
 const material10 = new THREE.MeshStandardMaterial( { 
 	map: uranusTexture,
-	sheen: 0.3,
-	sheenRoughness: 0.75,
-	clearcoat: 0.1, 
+
 } );
 const uranus = new THREE.Mesh( geometry10, material10)
 uranus.position.z = 800;
@@ -239,9 +215,7 @@ scene.add(uranus)
 const geometry11 = new THREE.SphereGeometry( 20, 50, 50)
 const material11 = new THREE.MeshStandardMaterial( { 
 	map: neptuneTexture,
-	sheen: 0.3,
-	sheenRoughness: 0.75,
-	clearcoat: 0.1, 
+
 } );
 const neptune = new THREE.Mesh( geometry11, material11)
 neptune.position.z = 70;
