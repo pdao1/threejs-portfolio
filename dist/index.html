@@ -35,14 +35,42 @@
 
 
 </div> -->
-<audio autoplay="true" muted="muted" src="serahstheme.mp3" id="music" loop="true" width="0" height="0"></audio>
-<script>
- setTimeout(function(){
-  const audio = document.getElementById('music');
-  audio.volume = '.20';
-  }, 2000);
- </script> 
 
+
+<script>
+const audioEle = document.createElement('audio')
+audioEle.id = "music";
+audioEle.src = "serahstheme.mp3";
+audioEle.volume = '.25';
+audioEle.autoplay = "true"
+document.body.appendChild(audioEle)
+
+const addStuff = document.createElement('button')
+addStuff.id = "mute";
+addStuff.innerHTML = "<img src='images/audio.png' style='z-index:10000; width: 25px; position: absolute; bottom: 5%; right: 5%; animation: 0.5s linear 0s 50 normal none running pulse;'>"
+document.body.appendChild(addStuff)
+
+
+function mute() {
+  const audio = document.getElementById('music')
+  if(audio.volume == '0') {
+  audio.volume = '0.25'
+} else {
+  audio.volume = '0';
+}
+ }
+
+$('#mute').click(function(){
+  const audio = document.getElementById('music')
+  if(audio.volume == '0') {
+  audio.volume = '0.25'
+} else {
+  audio.volume = '0';
+}
+})
+
+ </script> 
+  
   <canvas id="bg"></canvas>
     
   
