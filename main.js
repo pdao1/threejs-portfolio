@@ -261,7 +261,6 @@ directionalLight.shadow.camera.left = -150;
 directionalLight.shadow.camera.bottom = -100;
 directionalLight.shadow.camera.top = 100;
 directionalLight.shadow.camera.right = 100;
-
 scene.add( directionalLight, ambientLight );
 
 directionalLight.target = earth;
@@ -284,6 +283,8 @@ const controls = new OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
       controls.autoRotate = true;
       controls.autoRotateSpeed = 0.1;
+
+// to create shitload of stars			
 function addStars() {
 	const geometry = new THREE.SphereGeometry(0.25, 24, 24);
 	const material = new THREE.MeshStandardMaterial( {color: 0xFFFFFF} )
@@ -301,10 +302,6 @@ function addStars() {
 Array(1000).fill().forEach(addStars)
 
 
-
-// textures
-// const bgTexture = new THREE.TextureLoader().load('space.jpg');
-// scene.background(bgTexture)
 let r = 1100;
 let theta = 50;
 let theta2 = 0;
@@ -333,43 +330,55 @@ function animate() {
 	earth.rotation.z += 0.001;
 	earth.position.x = 1200 * Math.cos(theta)
 	earth.position.z = 1200 * Math.sin(theta)
+
 	clouds.rotation.x += 0.0010
 	clouds.rotation.z += 0.005;
 	clouds.position.x =  1200 * Math.cos(theta) 
 	clouds.position.z = 1200 * Math.sin(theta)
+
 	sun.rotation.x = 0;
 	sun.rotation.y = 1;
 	sun.rotation.z = 0;
+
   venus.rotation.x += 0.000005;
 	venus.rotation.y += 0.005;
 	venus.rotation.z += 0.00001;
-	venus.position.x = 1100 * Math.cos(theta)
+	venus.position.x = 800 * Math.cos(theta)
 	venus.position.z = 800 * Math.sin(theta)
+
 	mercury.rotation.x += 0.00005;
 	mercury.rotation.y += 0.0005
 	mercury.rotation.z += 0.0001;
-	mercury.position.x = 900 * Math.cos(theta2)
+	mercury.position.x = 800 * Math.cos(theta2)
 	mercury.position.z = 700 * Math.sin(theta2)
-	mars.position.x = 1200 * Math.cos(theta + 5) 
-	mars.position.z = 1200 * Math.sin(theta + 5) 
+	
+	mars.rotation.x += 0.005;
+	mars.position.x = 1500 * Math.cos(theta + 5) 
+	mars.position.z = 1500 * Math.sin(theta + 5) 
+
 	saturn.rotation.x += 0.0005;
 	saturn.rotation.y += 0.005;
 	saturn.rotation.z += 0.00001;	
-	saturn.position.x = 1400 * Math.cos(theta) 
-	saturn.position.z = 1400 * Math.sin(theta)
-	neptune.rotation.z += 0.010;
-	neptune.position.x = 1800 * Math.cos(theta + 10) 
-	neptune.position.z = 1800 * Math.sin(theta + 10)
-	uranus.position.x = 2000 * Math.cos(theta) 
-	uranus.position.z = 1800 * Math.sin(theta)  
+	saturn.position.x = 1800 * Math.cos(theta) 
+	saturn.position.z = 1800 * Math.sin(theta)
+
 	saturnRing.rotation.z += 0.005;
-	saturn.rotation.y += 0.001;
-	saturnRing.position.x = 1400 * Math.cos(theta) 
-	saturnRing.position.z = 1400 * Math.sin(theta) 
-	jupiter.position.x = 1900 * Math.cos(theta + 5) 
-	jupiter.position.z = 1900 * Math.sin(theta + 5) 
+	saturnRing.position.x = 1800 * Math.cos(theta) 
+	saturnRing.position.z = 1800 * Math.sin(theta) 
+
+	neptune.rotation.z += 0.010;
+	neptune.position.x = 2300 * Math.cos(theta + 10) 
+	neptune.position.z = 2200 * Math.sin(theta + 10)
+
+	uranus.position.x = 2400 * Math.cos(theta) 
+	uranus.position.z = 2000 * Math.sin(theta)  
+
+	jupiter.position.x = 2000 * Math.cos(theta + 5) 
+	jupiter.position.z = 2000 * Math.sin(theta + 5) 
+
   starField.position.x += 0.05
 	starField.position.z += 0.05
+
 	camera.position.x += dx;
   camera.position.y += dy;
   camera.position.z += dz;
