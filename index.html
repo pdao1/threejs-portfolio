@@ -24,6 +24,7 @@
   $(document).ready(setTimeout(function(){
     $('#progress-bar').hide();
     $('#bg').show(); 
+    $('#main').show();
   }), 3000);
 
 </script>
@@ -32,24 +33,23 @@
 
 
 </div> -->
-    
+    <audio autoplay="true" src="serahstheme.mp3" id="music" loop="true" width="0" height="0"></audio>
+<script>
+ setTimeout(function(){
+  const audio = document.getElementById('music');
+  audio.volume = '.20';
+  audio.play();
+  }, 2000);
+ </script> 
 
-
-  <canvas id="bg"></canvas>
+  <canvas id="bg" display="none"></canvas>
     
   
-     <audio autoplay="true" src="serahstheme.mp3" id="music" loop="true" width="0" height="0"></audio>
-      <script>
-       setTimeout(function(){
-        const audio = document.getElementById('music');
-        audio.volume = '.20';
-        audio.play();
-        }, 1000);
-       </script> 
+    
 
      
   
 
-    <script type="module" src="main.js"></script>
+  <script id="main" type="module" src="main.js" style="display: none"></script>
   </body>
 </html>
