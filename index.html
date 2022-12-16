@@ -33,7 +33,15 @@
 
 
 </div> -->
+<canvas id="bg"></canvas>
+    
+  
+    
 
+     
+  
+
+<script id="main" type="module" src="main.js"></script>
 
 <script>
 const audioEle = document.createElement('audio')
@@ -42,11 +50,14 @@ audioEle.src = "serahstheme.mp3";
 audioEle.volume = '.25';
 audioEle.autoplay = "true"
 document.body.appendChild(audioEle)
-
+// audioEle.innterHTML = "<button id='mute'></button>"
 const addStuff = document.createElement('button')
-addStuff.id = "mute";
-addStuff.innerHTML = "<img src='images/audio.png' style='z-index:10000; width: 25px; position: absolute; bottom: 5%; right: 5%; animation: 0.5s linear 0s 50 normal none running pulse;'>"
+addStuff.innerHTML = "<img id='mute' src='images/audio.png' style='z-index:10000; width: 25px; position: absolute; bottom: 5%; right: 5%; animation: 0.5s linear 0s 50 normal none running pulse;'>"
+addStuff.style.position ="absolute right 5% bottom 5%"
 document.body.appendChild(addStuff)
+// addStuff.id = "mute";
+// addStuff.innerHTML = "<img src='images/audio.png' style='z-index:10000; width: 25px; position: absolute; bottom: 5%; right: 5%; animation: 0.5s linear 0s 50 normal none running pulse;'>"
+
 
 
 function mute() {
@@ -69,14 +80,6 @@ $('#mute').click(function(){
 
  </script> 
   
-  <canvas id="bg"></canvas>
-    
   
-    
-
-     
-  
-
-  <script id="main" type="module" src="main.js"></script>
   </body>
 </html>
