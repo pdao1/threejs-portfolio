@@ -331,12 +331,12 @@ function animate() {
 	earth.rotation.x += 0.005;
 	earth.rotation.y += 0.005;
 	earth.rotation.z += 0.001;
-	earth.position.x = 1200 * Math.cos(theta + 20)
-	earth.position.z = 1200 * Math.sin(theta + 20)
+	earth.position.x = 1200 * Math.cos(theta)
+	earth.position.z = 1200 * Math.sin(theta)
 	clouds.rotation.x += 0.0010
 	clouds.rotation.z += 0.005;
-	clouds.position.x =  1200 * Math.cos(theta + 20) 
-	clouds.position.z = 1200 * Math.sin(theta + 20)
+	clouds.position.x =  1200 * Math.cos(theta) 
+	clouds.position.z = 1200 * Math.sin(theta)
 	sun.rotation.x = 0;
 	sun.rotation.y = 1;
 	sun.rotation.z = 0;

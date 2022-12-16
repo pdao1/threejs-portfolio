@@ -5,12 +5,32 @@
     <link rel="icon" type="image/svg+xml"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" src="style.css">
-    <title>Solar System, built with Three.js by Phung Dao</title>
+    <title>Solar System, built with Three.js by Phung Dao</title> 
+   <link rel="stylesheet" type="text/css" href="css/loading-bar.css"/>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"></script>
+    <script type="text/javascript" src="js/loading-bar.js"></script>
   </head>
-  <body>
-    <canvas id="bg"></canvas>
+ <body>
+  <!-- <div id="progress-bar"
+  data-preset="fan"
+  class="ldBar label-center"
+  data-min="59"
+  data-max="87" style="position: absolute;top: 50%; left: 50%;"></div>
+<script>
+  $(document).ready(setTimeout(function(){
+    $('#progress-bar').hide();
+    $('#bg').show(); 
+  }), 3000);
 
+</script> -->
+<embed src="serahstheme.mp3" id="music" loop="true" volume="20%" autostart="true" width="0" height="0">
+    <canvas id="bg"></canvas>
     
+    <script>$(document).on('load',function(){
+    $('#music').volume = ".25";
+    })
+
+    }</script> 
     <script type="module" src="main.js"></script>
   </body>
 </html>
