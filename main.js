@@ -22,17 +22,17 @@ camera.position.setX(600);
 
 
 renderer.render( scene, camera )
+
+// LOADERS
 const moonTexture = new THREE.TextureLoader().load('images/moonmap.jpg');
 const moonTexture2 = new THREE.TextureLoader().load('images/moon2.jpg');
-const moonRocks = new THREE.TextureLoader().load('images/moonrocks.jpg.jpg.jpg')
+const moonRocks = new THREE.TextureLoader().load('images/moonrocks.jpg.jpg')
 const earthTexture = new THREE.TextureLoader().load('images/8kearth.jpg');
 const earthSpec = new THREE.TextureLoader().load('images/earthspec.jpg');
 const earthNight = new THREE.TextureLoader().load('images/earthnight.jpg');
 const earthClouds = new THREE.TextureLoader().load('images/clouds2.jpg');
-
 const sunTexture = new THREE.TextureLoader().load('images/sun.jpg');
 const sunTexture2 = new THREE.TextureLoader().load('/images/sun2.jpg');
-
 const milkyWay = new THREE.TextureLoader().load('images/milkyway.jpg');
 const mercuryTexture = new THREE.TextureLoader().load('images/mercury.jpg');
 const venusTexture = new THREE.TextureLoader().load('images/venus.jpg');
@@ -45,8 +45,36 @@ const saturnRingTexture = new THREE.TextureLoader().load('images/saturn_ring.png
 const alpha = new THREE.TextureLoader().load('images/alpha.jpg');
 const alpha2 = new THREE.TextureLoader().load('images/alpha2.jpg');
 const alpha3 = new THREE.TextureLoader().load('images/alpha3.jpg');
-scene.background = milkyWay;
 const starfieldTexture = new THREE.TextureLoader().load("images/galaxy_starfield.png");
+
+scene.background = milkyWay;
+
+// function ( xhr ) {
+// 	console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+// }
+// // called when loading has errors
+// function ( error ) {
+// 	console.log( 'An error happened' );
+// }
+
+// TEXT 
+// const loader = new THREE.FontLoader().load
+
+// loader.load( 'examples/fonts/helvetiker_regular.typeface.json', function ( font ) {
+
+// 	const text = new TextGeometry( 'Hello three.js!', {
+// 		font: font,
+// 		size: 80,
+// 		height: 5,
+// 		curveSegments: 12,
+// 		bevelEnabled: true,
+// 		bevelThickness: 10,
+// 		bevelSize: 8,
+// 		bevelOffset: 0,
+// 		bevelSegments: 5
+// 	} );
+// });
+// scene.add(text)
 
 const geometry = new THREE.SphereGeometry( 4, 60, 60 )
 const material = new THREE.MeshStandardMaterial( { 
@@ -60,6 +88,7 @@ const material = new THREE.MeshStandardMaterial( {
 const moon = new THREE.Mesh( geometry, material )
 moon.position.set(400, 20, 40)
 scene.add(moon)
+
 
 const geometry2 = new THREE.SphereGeometry( 25, 50, 50)
 const material2 = new THREE.MeshStandardMaterial( { 
@@ -75,6 +104,7 @@ earth.position.z = 30;
 earth.position.setX(450)
 scene.add(earth)
 
+
 const geometry3 = new THREE.SphereGeometry( 400, 64, 32)
 const material3 = new THREE.MeshStandardMaterial( { 
 	map: sunTexture,
@@ -88,6 +118,7 @@ const sun = new THREE.Mesh( geometry3, material3 )
 sun.position.z = 30;
 sun.position.setX(-450)
 scene.add(sun)
+
 
 const geometry4 = new THREE.SphereGeometry( 27, 64, 32)
 const material4 = new THREE.MeshStandardMaterial( { 
@@ -105,6 +136,7 @@ clouds.position.setX(450)
 scene.add(clouds)
 
 
+
 const geometry5 = new THREE.SphereGeometry( 10, 50, 32)
 const material5 = new THREE.MeshStandardMaterial( { 
 	map: mercuryTexture,
@@ -116,6 +148,7 @@ const mercury = new THREE.Mesh( geometry5, material5 )
 mercury.position.z = -250;
 mercury.position.setX(-250)
 scene.add(mercury)
+
 
 
 const geometry6 = new THREE.SphereGeometry( 20, 50, 50)
@@ -133,7 +166,6 @@ scene.add(venus)
 const quaternion = new THREE.Quaternion();
 
 
-
 const geometry7 = new THREE.SphereGeometry( 25, 50, 50)
 const material7 = new THREE.MeshStandardMaterial( { 
 	map: marsTexture,
@@ -146,8 +178,9 @@ mars.position.z = 400;
 mars.position.setX(650)
 mars.applyQuaternion(quaternion)
 quaternion.setFromAxisAngle( mars, Math.PI / 4 );
-
 scene.add(mars)
+
+
 
 const geometry8 = new THREE.SphereGeometry( 50, 50, 50)
 const material8 = new THREE.MeshStandardMaterial( { 
@@ -161,6 +194,8 @@ jupiter.position.z = 700;
 jupiter.position.setX(900)
 scene.add(jupiter)
 
+
+
 const geometry9 = new THREE.SphereGeometry( 30, 50, 50)
 const material9 = new THREE.MeshStandardMaterial( { 
 	map: saturnTexture,
@@ -172,6 +207,7 @@ const saturn = new THREE.Mesh( geometry9, material9)
 saturn.position.z = 700;
 saturn.position.setX(1200)
 scene.add(saturn)
+
 
 const saturnRingGeometry = new THREE.RingGeometry( 60, 35, 38 );
 const saturnRingMaterial = new THREE.MeshStandardMaterial( { 
@@ -185,7 +221,6 @@ saturnRingMaterial.transparent = true;
 const saturnRing = new THREE.Mesh( saturnRingGeometry, saturnRingMaterial)
 saturnRing.position.set(1200,0,700);
 saturnRing.rotateX(90)
-
 scene.add(saturnRing)
 
 const geometry10 = new THREE.SphereGeometry( 15, 50, 50)
@@ -200,6 +235,7 @@ uranus.position.z = 800;
 uranus.position.setX(1620)
 scene.add(uranus)
 
+
 const geometry11 = new THREE.SphereGeometry( 20, 50, 50)
 const material11 = new THREE.MeshStandardMaterial( { 
 	map: neptuneTexture,
@@ -212,6 +248,7 @@ neptune.position.z = 70;
 neptune.position.setX(1800)
 scene.add(neptune)
 
+
 const geometry12 = new THREE.SphereGeometry( 3000, 50, 50)
 const material12 = new THREE.MeshStandardMaterial( { 
 	color: 0x808080,
@@ -221,6 +258,7 @@ const material12 = new THREE.MeshStandardMaterial( {
 	alphaTest: .4,
 	alphaMap: alpha,
 } );
+
 
 
 const ort = new THREE.Mesh( geometry12, material12)
