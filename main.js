@@ -72,6 +72,24 @@ loadingManager.onLoad = function(){
 	setTimeout(function(){
 		$('canvas').css('opacity', '1.0')
 	}, 3000)
+	$(document).ready(function(){
+		setTimeout(function(){
+		typing();
+		}, 5000)
+		setTimeout(function(){
+		typing2();
+		$('#typing').hide();
+		}, 10000)
+		setTimeout(function(){
+		typing3();
+		$('#typing2').hide()
+		}, 16500)
+		setTimeout(function(){
+		$('#typing3').hide()
+		$('.words').hide()
+		}, 22500)
+	})
+	
 };
 
 
@@ -142,24 +160,7 @@ function typing3() {
 	}
 }
 
-// // Text content
-$(document).ready(function(){
-	setTimeout(function(){
-	typing();
-	}, 5000)
-	setTimeout(function(){
-	typing2();
-	$('#typing').hide();
-	}, 10000)
-	setTimeout(function(){
-	typing3();
-	$('#typing2').hide()
-	}, 16500)
-	setTimeout(function(){
-	$('#typing3').hide()
-	$('.words').hide()
-	}, 22500)
-})
+
 
 
 
