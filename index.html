@@ -8,8 +8,7 @@
     <title>Solar System, built with Three.js by Phung Dao</title> 
    <link
    rel="stylesheet"
-   href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
- />
+   href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"></script>
     <script type="module" src="loading-bar.js"></script>
   </head>
@@ -19,48 +18,65 @@
 <canvas id="bg"></canvas>
     
 <div id="audio-control" style="z-index: 1000; position: absolute; right: 5%; bottom: 5%;">
-  <span id="play-button"></span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" fill="#3D3132">
-    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
-  </svg>
+  <button id="play-button" style="background-color:transparent;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#fff">
+    <path fill-rule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z" clip-rule="evenodd" />
+  </svg></button>
   <audio autoplay width="0" height="0" src="serahstheme.mp3"></audio>
   <input type='range' class='timeline' max='100' value='0'>
 </div>
-    
+  <div id="links" style="position: absolute; left: 5%; bottom: 5%;background-color: transparent; ">
+   <a href="https://www.phungdao.com"><button id="portfolio"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fff" class="bi bi-columns-gap" viewBox="0 0 16 16">
+      <path d="M6 1v3H1V1h5zM1 0a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm14 12v3h-5v-3h5zm-5-1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5zM6 8v7H1V8h5zM1 7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H1zm14-6v7h-5V1h5zm-5-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1h-5z"/>
+    </svg></button>
+    <p style="padding: 5px;">Portfolio</p></a>
+  </div>
+    <div class="links2" style="position: absolute; left: 5%; bottom: 10%;background-color: transparent">   
 
+      <a href="https://standardresume.co/r/phungdao"><button id="resume"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fff" class="bi bi-r-square-fill" viewBox="0 0 16 16">
+        <path d="M6.835 5.092v2.777h1.549c.995 0 1.573-.463 1.573-1.36 0-.913-.596-1.417-1.537-1.417H6.835Z"/>
+        <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2Zm3.5 4.002h3.11c1.71 0 2.741.973 2.741 2.46 0 1.138-.667 1.94-1.495 2.24L11.5 12H9.98L8.52 8.924H6.836V12H5.5V4.002Z"/>
+      </svg></button>
+      <p style="padding: 5px;">Resume</p></a></div>
+  </div>
 
+</div>
+<div class="words">
+ <p id="typing"></p>
+ <p id="typing2"></p>
+ <p id="typing3"></p>
+</div>
 <script id="main" type="module" src="main.js"></script>
 
 <script>
-
 const playerButton = document.querySelector('#play-button'),
       audio = document.querySelector('audio'),
       timeline = document.querySelector('.timeline'),
-      soundButton = document.querySelector('.sound-button'),
+      soundButton = document.querySelector('#play-button'),
       playIcon = `
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#3D3132">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#fff">
     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
   </svg>`,
       pauseIcon = `
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#3D3132">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#fff">
   <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
 </svg>
       `,
       soundIcon = `
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#3D3132">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#fff">
   <path fill-rule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z" clip-rule="evenodd" />
 </svg>`,
       muteIcon = `
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#3D3132">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#fff">
   <path fill-rule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM12.293 7.293a1 1 0 011.414 0L15 8.586l1.293-1.293a1 1 0 111.414 1.414L16.414 10l1.293 1.293a1 1 0 01-1.414 1.414L15 11.414l-1.293 1.293a1 1 0 01-1.414-1.414L13.586 10l-1.293-1.293a1 1 0 010-1.414z" clip-rule="evenodd" />
 </svg>`;
 
 function toggleAudio () {
   if (audio.paused) {
     audio.play();
-    playButton.innerHTML = pauseIcon;
+    playerButton.innerHTML = pauseIcon;
   } else {
     audio.pause();
-    playButton.innerHTML = playIcon;
+    playerButton.innerHTML = playIcon;
   }
 }
 
@@ -73,12 +89,6 @@ function changeTimelinePosition () {
 }
 
 audio.ontimeupdate = changeTimelinePosition;
-
-function audioEnded () {
-  playerButton.innerHTML = playIcon;
-}
-
-audio.onended = audioEnded;
 
 function changeSeek () {
   const time = (timeline.value * audio.duration) / 100;
@@ -98,15 +108,12 @@ soundButton.addEventListener('click', toggleSound);
 
 
 
-function mute() {
+function sound() {
   const audio = document.getElementById('music')
-  if(audio.volume == '0') {
+  if(audio.play) {
   audio.volume = '0.25'
-} else {
-  audio.volume = '0';
-}
  }
-
+}
 $('#mute').click(function(){
   const audio = document.getElementById('music')
   if(audio.volume == '0') {
@@ -124,23 +131,9 @@ audioEle.src = "serahstheme.mp3";
 audioEle.volume = '.25';
 audioEle.autoplay = "true"
 audioControl.appendChild(audioEle)
-
-addStuff.innerHTML = "<img id='mute' src='images/audio.png' style='z-index:10000; width: 25px; position: absolute; bottom: 5%; right: 5%; animation: 0.5s linear 0s 50 normal none running pulse;'>"
-addStuff.style.position ="absolute right 5% bottom 5%"
-addStuff.classList.add('player-button');
-audioControl.append(addStuff)
-
-
-
-
-
-
-
-
-
-
  </script> 
-  
+
+
   
   </body>
 </html>

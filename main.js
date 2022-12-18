@@ -74,6 +74,95 @@ loadingManager.onLoad = function(){
 	}, 3000)
 };
 
+
+// setTimeout(function(){
+// 	let doc = document.querySelector('.typewriter p');
+// 	doc.style.animation = "typingBackwards 5s steps(30, end)"
+// 	}, 10000)
+// setTimeout(function(){
+// 	let doc = document.querySelector('.typewriter p')
+// 	doc.innerText = ""
+// }, 20000)
+// setTimeout(function(){
+// 	let doc = document.querySelector('.typewriter p')
+// 	doc.innerText = "Please enjoy the interactive solar system, built in Three.js"
+// 	doc.style.animation = "typing 5s steps(30, end)"
+// 	}, 25000)
+// 	setTimeout(function(){
+// 		let doc = document.querySelector('.typewriter p');
+// 		doc.style.animation = "typingBackwards 5s steps(30, end)"
+// 		}, 30000)
+// 	setTimeout(function(){
+// 		let doc = document.querySelector('.typewriter p')
+// 		doc.innerText = ""
+// 	}, 35000)
+// 	setTimeout(function(){
+// 		let doc = document.querySelector('.typewriter p')
+// 		doc.innerText = "My main portfolio links are at the bottom. Thank you."
+// 		doc.style.animation = "typing 5s steps(30, end)"
+// 		}, 40000)
+// 		setTimeout(function(){
+// 			let doc = document.querySelector('.typewriter p');
+// 			doc.style.animation = "typingBackwards 5s steps(30, end
+// 				)"
+// 			}, 50000)
+// 		setTimeout(function(){
+// 			let doc = document.querySelector('.typewriter p')
+// 			doc.innerText = ""
+// 		}, 55000)
+// })
+
+var i = 0;
+var e = 0;
+var a = 0; 
+var txt = 'Hello! My name is Phung Dao. I am a Frontend Developer'
+var txt2 = 'Presented is my interactive rendition of the inner & outer solar system, built in Three.js'
+var txt3 = 'My full portfolio and additional information in the links below. Thank you!'
+var speed = 50;
+
+function typing() {
+  if (i < txt.length) {
+    document.getElementById("typing").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typing, speed);
+	} 
+}
+function typing2() {
+  if (e < txt2.length) {
+    document.getElementById("typing2").innerHTML += txt2.charAt(e);
+    e++;
+    setTimeout(typing2, speed);
+	}
+}
+function typing3() {
+  if (a < txt3.length) {
+    document.getElementById("typing3").innerHTML += txt3.charAt(a);
+    a++;
+    setTimeout(typing3, speed);
+	}
+}
+
+// // Text content
+$(document).ready(function(){
+	setTimeout(function(){
+	typing();
+	}, 5000)
+	setTimeout(function(){
+	typing2();
+	$('#typing').hide();
+	}, 10000)
+	setTimeout(function(){
+	typing3();
+	$('#typing2').hide()
+	}, 16500)
+	setTimeout(function(){
+	$('#typing3').hide()
+	$('.words').hide()
+	}, 22500)
+})
+
+
+
 // LOADERS
 const moonTexture = new THREE.TextureLoader(loadingManager).load('images/moonmap.jpg');
 const moonTexture2 = new THREE.TextureLoader(loadingManager).load('images/moon2.jpg');
@@ -99,34 +188,6 @@ const alpha3 = new THREE.TextureLoader(loadingManager).load('images/alpha3.jpg')
 const starfieldTexture = new THREE.TextureLoader(loadingManager).load("images/galaxy_starfield.png");
 
 scene.background = milkyWay;
-
-
-// function ( xhr ) {
-// 	console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
-// }
-// // called when loading has errors
-// function ( error ) {
-// 	console.log( 'An error happened' );
-// }
-
-// TEXT 
-// const loader = new THREE.FontLoader().load
-
-// loader.load( 'examples/fonts/helvetiker_regular.typeface.json', function ( font ) {
-
-// 	const text = new TextGeometry( 'Hello three.js!', {
-// 		font: font,
-// 		size: 80,
-// 		height: 5,
-// 		curveSegments: 12,
-// 		bevelEnabled: true,
-// 		bevelThickness: 10,
-// 		bevelSize: 8,
-// 		bevelOffset: 0,
-// 		bevelSegments: 5
-// 	} );
-// });
-// scene.add(text)
 
 const geometry = new THREE.SphereGeometry( 4, 60, 60 )
 const material = new THREE.MeshStandardMaterial( { 
