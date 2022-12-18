@@ -1,7 +1,32 @@
 import './style.css'
 
 import * as THREE from 'three';
+import { Spinner } from 'spin.js';
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
+
+var opts = {
+  lines: 20, // The number of lines to draw
+  length: 6, // The length of each line
+  width: 5, // The line thickness
+  radius: 39, // The radius of the inner circle
+  scale: 1.6, // Scales overall size of the spinner
+  corners: 0.4, // Corner roundness (0..1)
+  speed: 0.6, // Rounds per second
+  rotate: 37, // The rotation offset
+  animation: 'spinner-line-shrink', // The CSS animation name for the lines
+  direction: 1, // 1: clockwise, -1: counterclockwise
+  color: '#f5ed00', // CSS color or array of colors
+  fadeColor: 'transparent', // CSS color or array of colors
+  top: '50%', // Top position relative to parent
+  left: '50%', // Left position relative to parent
+  shadow: '0 0 1px transparent', // Box-shadow for the lines
+  zIndex: 2000000000, // The z-index (defaults to 2e9)
+  className: 'spinner', // The CSS class to assign to the spinner
+  position: 'absolute', // Element positioning
+};
+var target = document.getElementById('loading');
+var spinner = new Spinner(opts).spin(target);
+
 
 const scene = new THREE.Scene();
 
@@ -22,32 +47,59 @@ camera.position.setX(600);
 
 
 renderer.render( scene, camera )
+const loadingManager = new THREE.LoadingManager();
+loadingManager.onLoad = function(){
+	setTimeout(function(){
+	$('#loading').hide();
+	$('canvas').show();
+	$('canvas').css('opacity', '.40')
+	}, 1500)
+	setTimeout(function(){
+		$('canvas').css('opacity', '.50')
+	}, 1750)
+	setTimeout(function(){
+		$('canvas').css('opacity', '.60')
+	}, 2000)
+	setTimeout(function(){
+		$('canvas').css('opacity', '.70')
+	}, 2250)
+	setTimeout(function(){
+		$('canvas').css('opacity', '.80')
+	}, 2500)
+	setTimeout(function(){
+		$('canvas').css('opacity', '.90')
+	}, 2500)
+	setTimeout(function(){
+		$('canvas').css('opacity', '1.0')
+	}, 3000)
+};
 
 // LOADERS
-const moonTexture = new THREE.TextureLoader().load('images/moonmap.jpg');
-const moonTexture2 = new THREE.TextureLoader().load('images/moon2.jpg');
-const moonRocks = new THREE.TextureLoader().load('images/moonrocks.jpg.jpg')
-const earthTexture = new THREE.TextureLoader().load('images/8kearth.jpg');
-const earthSpec = new THREE.TextureLoader().load('images/earthspec.jpg');
-const earthNight = new THREE.TextureLoader().load('images/earthnight.jpg');
-const earthClouds = new THREE.TextureLoader().load('images/clouds2.jpg');
-const sunTexture = new THREE.TextureLoader().load('images/sun.jpg');
-const sunTexture2 = new THREE.TextureLoader().load('/images/sun2.jpg');
-const milkyWay = new THREE.TextureLoader().load('images/milkyway.jpg');
-const mercuryTexture = new THREE.TextureLoader().load('images/mercury.jpg');
-const venusTexture = new THREE.TextureLoader().load('images/venus.jpg');
-const marsTexture = new THREE.TextureLoader().load('images/mars.jpg');
-const saturnTexture = new THREE.TextureLoader().load('images/saturn.jpg');
-const jupiterTexture = new THREE.TextureLoader().load('images/jupiter.jpg');
-const uranusTexture = new THREE.TextureLoader().load('images/uranus.jpg');
-const neptuneTexture = new THREE.TextureLoader().load('images/neptune.jpg');
-const saturnRingTexture = new THREE.TextureLoader().load('images/saturn_ring.png');
-const alpha = new THREE.TextureLoader().load('images/alpha.jpg');
-const alpha2 = new THREE.TextureLoader().load('images/alpha2.jpg');
-const alpha3 = new THREE.TextureLoader().load('images/alpha3.jpg');
-const starfieldTexture = new THREE.TextureLoader().load("images/galaxy_starfield.png");
+const moonTexture = new THREE.TextureLoader(loadingManager).load('images/moonmap.jpg');
+const moonTexture2 = new THREE.TextureLoader(loadingManager).load('images/moon2.jpg');
+const moonRocks = new THREE.TextureLoader(loadingManager).load('images/moonrocks.jpg.jpg')
+const earthTexture = new THREE.TextureLoader(loadingManager).load('images/8kearth.jpg');
+const earthSpec = new THREE.TextureLoader(loadingManager).load('images/earthspec.jpg');
+const earthNight = new THREE.TextureLoader(loadingManager).load('images/earthnight.jpg');
+const earthClouds = new THREE.TextureLoader(loadingManager).load('images/clouds2.jpg');
+const sunTexture = new THREE.TextureLoader(loadingManager).load('images/sun.jpg');
+const sunTexture2 = new THREE.TextureLoader(loadingManager).load('/images/sun2.jpg');
+const milkyWay = new THREE.TextureLoader(loadingManager).load('images/milkyway.jpg');
+const mercuryTexture = new THREE.TextureLoader(loadingManager).load('images/mercury.jpg');
+const venusTexture = new THREE.TextureLoader(loadingManager).load('images/venus.jpg');
+const marsTexture = new THREE.TextureLoader(loadingManager).load('images/mars.jpg');
+const saturnTexture = new THREE.TextureLoader(loadingManager).load('images/saturn.jpg');
+const jupiterTexture = new THREE.TextureLoader(loadingManager).load('images/jupiter.jpg');
+const uranusTexture = new THREE.TextureLoader(loadingManager).load('images/uranus.jpg');
+const neptuneTexture = new THREE.TextureLoader(loadingManager).load('images/neptune.jpg');
+const saturnRingTexture = new THREE.TextureLoader(loadingManager).load('images/saturn_ring.png');
+const alpha = new THREE.TextureLoader(loadingManager).load('images/alpha.jpg');
+const alpha2 = new THREE.TextureLoader(loadingManager).load('images/alpha2.jpg');
+const alpha3 = new THREE.TextureLoader(loadingManager).load('images/alpha3.jpg');
+const starfieldTexture = new THREE.TextureLoader(loadingManager).load("images/galaxy_starfield.png");
 
 scene.background = milkyWay;
+
 
 // function ( xhr ) {
 // 	console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );

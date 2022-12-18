@@ -12,6 +12,7 @@
     "vite": "^4.0.0"
   },
   "dependencies": {
+    "spin.js": "^4.1.1",
     "three": "^0.147.0"
   }
 }
