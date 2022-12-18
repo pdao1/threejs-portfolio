@@ -28,14 +28,22 @@ button {
 		z-index: 10000;
     width: 25px;
     position: absolute;
-    left: -30%;
+    left: -35%;
     bottom: -22%;
 		height: 34px;
 		cursor: pointer;
 		width: 34px;
-		padding: 5px;
+		padding: 5px 5px;
     background-color: transparent;
     animation: 0.5s linear 0s infinite normal none running pulse;
+    border: 0px!important;
+    margin-left: 10px;
+}
+#resume {
+  margin-left:20px;
+}
+#portfolio {
+  margin-left: 20px;
 }
 @keyframes spinner-line-fade-more {
   0%, 100% {
@@ -80,7 +88,9 @@ button {
  /* Adjust as needed */
   position: absolute;
   top: 20%;
-  left: 20%;
+  left: 15%;
+  padding-right:10%;
+  ;
   /* animation: 
     typing 5s steps(30, end),
     blink-caret .5s step-end infinite;
