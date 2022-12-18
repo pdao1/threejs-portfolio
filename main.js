@@ -74,6 +74,7 @@ loadingManager.onLoad = function(){
 	}, 3000)
 	$(document).ready(function(){
 		setTimeout(function(){
+		
 		typing();
 		}, 5000)
 		setTimeout(function(){
