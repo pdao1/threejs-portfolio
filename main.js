@@ -72,9 +72,12 @@ loadingManager.onLoad = function(){
 	setTimeout(function(){
 		$('canvas').css('opacity', '1.0')
 	}, 3000)
+
+
 	$(document).ready(function(){
 		setTimeout(function(){
-		
+		$('#typing, #typing2, #typing3').css('border-right', '.15em solid orange')
+
 		typing();
 		}, 5000)
 		setTimeout(function(){
