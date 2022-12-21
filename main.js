@@ -386,7 +386,7 @@ directionalLight.castShadow = true;
 directionalLight.shadow.mapSize.width = 400;
 directionalLight.shadow.mapSize.height = 400;
 directionalLight.shadow.camera.near = 100;
-directionalLight.shadow.camera.far = 1000;
+directionalLight.shadow.camera.far = 1500;
 directionalLight.shadow.camera.left = -150;
 directionalLight.shadow.camera.bottom = -100;
 directionalLight.shadow.camera.top = 100;
@@ -441,9 +441,9 @@ let dTheta2 = 15 * Math.PI / 10000  * - 1
 // recursion to repeat animation and register changes between frames
 function animate() {
 	requestAnimationFrame( animate );
-	const dx = 0.10;
-	const dy = 0.30;  
-	const dz =  0.3;
+	const dx = 0.13;
+	const dy = 0.45;  
+	const dz =  0.35;
 
 	theta += dTheta
 	theta2 += dTheta2
@@ -473,14 +473,14 @@ function animate() {
   venus.rotation.x += 0.000005;
 	venus.rotation.y += 0.005;
 	venus.rotation.z += 0.00001;
-	venus.position.x = 800 * Math.cos(theta)
-	venus.position.z = 800 * Math.sin(theta)
+	venus.position.x = 900 * Math.cos(theta)
+	venus.position.z = 900 * Math.sin(theta)
 
 	mercury.rotation.x += 0.00005;
 	mercury.rotation.y += 0.0005
 	mercury.rotation.z += 0.0001;
-	mercury.position.x = 800 * Math.cos(theta2)
-	mercury.position.z = 700 * Math.sin(theta2)
+	mercury.position.x = 850 * Math.cos(theta2)
+	mercury.position.z = 850 * Math.sin(theta2)
 	
 	mars.rotation.x += 0.005;
 	mars.position.x = 1500 * Math.cos(theta + 5) 
