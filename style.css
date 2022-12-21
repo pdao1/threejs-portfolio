@@ -39,6 +39,9 @@ button {
     border: 0px!important;
     margin-left: 10px;
 }
+#playPause {
+  left: -80px;
+}
 #resume {
   margin-left:20px;
 }
