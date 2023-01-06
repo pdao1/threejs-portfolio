@@ -12,6 +12,7 @@
     "vite": "^4.0.0"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.6",
     "spin.js": "^4.1.1",
     "three": "^0.147.0"
   }

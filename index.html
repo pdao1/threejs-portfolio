@@ -5,19 +5,38 @@
     <link rel="icon" type="image/svg+xml"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" src="style.css">
-    <title>Solar System, built with Three.js by Phung Dao</title> 
+    <title>Phung Dao's Portfolio: Order & Chaos of the Universe</title> 
    <link
    rel="stylesheet"
    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"></script>
     <script type="module" src="loading-bar.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script>
+      const tooltip = document.querySelector('#tooltip');
+createPopper(audioControl, tooltip, {
+  placement: 'top',
+  modifiers: [
+    {
+      name: 'offset',
+      options: {
+        offset: [0, 8],
+      },
+    },
+  ],
+});
+    </script>
+    <button id="button" aria-describedby="tooltip">I'm a button</button>
+    <div id="tooltip" role="tooltip">click play/pause for maximum theatrical effect </div>
+    
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
   </head>
  <body>
 <div id="loading"></div>
 
-<canvas id="bg"></canvas>
-    
+<canvas id="bg"></canvas> 
 <div id="audio-control" style="z-index: 1000; position: absolute; right: 5%; bottom: 5%;">
+  <p id="song-title" style="font-size: 8px; color: #fff">Final Fantasy XIII: Serah's Theme</p>
   <button id="playPause"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#fff">
     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
   </svg></button>
@@ -78,8 +97,8 @@ audio.volume = '.20'
 toggleAudio() 
 function toggleAudio () {
   if (audio.paused) {
-    audio.play();
     playerButton.innerHTML = pauseIcon;
+    audio.play();
   } else {
     audio.pause();
     playerButton.innerHTML = playIcon;
@@ -137,6 +156,9 @@ const addStuff = document.createElement('button')
 // audioEle.volume = '.25';
 // audioEle.autoplay = "true"
 // audioControl.appendChild(audioEle)
+
+
+
  </script> 
 
 

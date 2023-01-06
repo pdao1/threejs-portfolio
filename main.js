@@ -52,6 +52,7 @@ loadingManager.onLoad = function(){
 	setTimeout(function(){
 	$('#loading').hide();
 	$('canvas').show();
+	$('#tooltip').show();
 	$('canvas').css('opacity', '.40')
 	}, 1500)
 	setTimeout(function(){
@@ -70,8 +71,10 @@ loadingManager.onLoad = function(){
 		$('canvas').css('opacity', '.90')
 	}, 2500)
 	setTimeout(function(){
+		$('#tooltip').hide();
 		$('canvas').css('opacity', '1.0')
 	}, 3000)
+	
 
 
 	$(document).ready(function(){
