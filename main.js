@@ -137,35 +137,35 @@ loadingManager.onLoad = function(){
 // 		}, 55000)
 // })
 
-var i = 0;
-var e = 0;
-var a = 0; 
-var txt = 'Hello! My name is Phung Dao. I am a Frontend Developer'
-var txt2 = 'Presented is my interactive rendition of the inner & outer solar system, built in Three.js'
-var txt3 = 'My full portfolio and additional information in the links below. Thank you!'
-var speed = 50;
+// var i = 0;
+// var e = 0;
+// var a = 0; 
+// var txt = 'Hello! My name is Phung Dao. I am a Frontend Developer'
+// var txt2 = 'Presented is my interactive rendition of the inner & outer solar system, built in Three.js'
+// var txt3 = 'My full portfolio and additional information in the links below. Thank you!'
+// var speed = 50;
 
-function typing() {
-  if (i < txt.length) {
-    document.getElementById("typing").innerHTML += txt.charAt(i);
-    i++;
-    setTimeout(typing, speed);
-	} 
-}
-function typing2() {
-  if (e < txt2.length) {
-    document.getElementById("typing2").innerHTML += txt2.charAt(e);
-    e++;
-    setTimeout(typing2, speed);
-	}
-}
-function typing3() {
-  if (a < txt3.length) {
-    document.getElementById("typing3").innerHTML += txt3.charAt(a);
-    a++;
-    setTimeout(typing3, speed);
-	}
-}
+// function typing() {
+//   if (i < txt.length) {
+//     document.getElementById("typing").innerHTML += txt.charAt(i);
+//     i++;
+//     setTimeout(typing, speed);
+// 	} 
+// }
+// function typing2() {
+//   if (e < txt2.length) {
+//     document.getElementById("typing2").innerHTML += txt2.charAt(e);
+//     e++;
+//     setTimeout(typing2, speed);
+// 	}
+// }
+// function typing3() {
+//   if (a < txt3.length) {
+//     document.getElementById("typing3").innerHTML += txt3.charAt(a);
+//     a++;
+//     setTimeout(typing3, speed);
+// 	}
+// }
 
 
 
