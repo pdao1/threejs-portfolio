@@ -78,11 +78,11 @@ loadingManager.onLoad = function(){
 
 
 	$(document).ready(function(){
-		setTimeout(function(){
-		$('#typing, #typing2, #typing3').css('border-right', '.15em solid orange')
-		$('#tooltip').hide();
-		typing();
-		}, 5000)
+		// setTimeout(function(){
+		// $('#typing, #typing2, #typing3').css('border-right', '.15em solid orange')
+		// $('#tooltip').hide();
+		// typing();
+		// }, 5000)
 		setTimeout(function(){
 		typing2();
 		$('#typing').hide();
