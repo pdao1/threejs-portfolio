@@ -77,25 +77,25 @@ loadingManager.onLoad = function(){
 	
 
 
-	$(document).ready(function(){
-		// setTimeout(function(){
-		// $('#typing, #typing2, #typing3').css('border-right', '.15em solid orange')
-		// $('#tooltip').hide();
-		// typing();
-		// }, 5000)
-		setTimeout(function(){
-		typing2();
-		$('#typing').hide();
-		}, 10000)
-		setTimeout(function(){
-		typing3();
-		$('#typing2').hide()
-		}, 16500)
-		setTimeout(function(){
-		$('#typing3').hide()
-		$('.words').hide()
-		}, 22500)
-	})
+	// $(document).ready(function(){
+	// 	// setTimeout(function(){
+	// 	// $('#typing, #typing2, #typing3').css('border-right', '.15em solid orange')
+	// 	// $('#tooltip').hide();
+	// 	// typing();
+	// 	// }, 5000)
+	// 	setTimeout(function(){
+	// 	typing2();
+	// 	$('#typing').hide();
+	// 	}, 10000)
+	// 	setTimeout(function(){
+	// 	typing3();
+	// 	$('#typing2').hide()
+	// 	}, 16500)
+	// 	setTimeout(function(){
+	// 	$('#typing3').hide()
+	// 	$('.words').hide()
+	// 	}, 22500)
+	// })
 	
 };
 
