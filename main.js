@@ -4,28 +4,7 @@ import * as THREE from 'three';
 import { Spinner } from 'spin.js';
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
 
-var opts = {
-  lines: 20, // The number of lines to draw
-  length: 6, // The length of each line
-  width: 5, // The line thickness
-  radius: 39, // The radius of the inner circle
-  scale: 1.6, // Scales overall size of the spinner
-  corners: 0.4, // Corner roundness (0..1)
-  speed: 0.6, // Rounds per second
-  rotate: 37, // The rotation offset
-  animation: 'spinner-line-shrink', // The CSS animation name for the lines
-  direction: 1, // 1: clockwise, -1: counterclockwise
-  color: '#f5ed00', // CSS color or array of colors
-  fadeColor: 'transparent', // CSS color or array of colors
-  top: '50%', // Top position relative to parent
-  left: '50%', // Left position relative to parent
-  shadow: '0 0 1px transparent', // Box-shadow for the lines
-  zIndex: 2000000000, // The z-index (defaults to 2e9)
-  className: 'spinner', // The CSS class to assign to the spinner
-  position: 'absolute', // Element positioning
-};
-var target = document.getElementById('loading');
-var spinner = new Spinner(opts).spin(target);
+
 
 
 const scene = new THREE.Scene();
@@ -433,7 +412,6 @@ function addStars() {
 }
 
 Array(1000).fill().forEach(addStars)
-
 
 let r = 1100;
 let theta = 50;
