@@ -11,35 +11,19 @@
    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"></script>
 
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script>
-      const tooltip = document.querySelector('#tooltip');
-createPopper(audioControl, tooltip, {
-  placement: 'top',
-  modifiers: [
-    {
-      name: 'offset',
-      options: {
-        offset: [0, 8],
-      },
-    },
-  ],
-});
-    </script>
-    <button id="button" aria-describedby="tooltip">I'm a button</button>
-    <div id="tooltip" role="tooltip">click play/pause for maximum theatrical effect </div>
+    <button id="button" aria-describedby="tooltip">click play/pause for maximum effect</button>
+    <div id="tooltip" role="tooltip">click play/pause if music doesn't start automatically</div>
     
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
   </head>
  <body>
-  <div id="loading">
-    <span></span> 
-    <span></span>
-  </div>
+  <div class="loadingio-spinner-bean-eater-uoj0usmxt1k" id="load"><div class="ldio-229d50w7w7o">
+    <div><div></div><div></div><div></div></div><div><div></div><div></div><div></div></div>
+    </div></div>
+    
   
 
 <canvas id="bg"></canvas> 
-<div id="audio-control" style="z-index: 1000; position: absolute; right: 5%; bottom: 5%;">
+<div id="audio-control" style="z-index: 1000; position: absolute; right: 5%; bottom: 8%;">
   <p id="song-title" style="font-size: 8px; color: #fff">Final Fantasy XIII: Serah's Theme</p>
   <button id="playPause"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#fff">
     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
@@ -50,14 +34,14 @@ createPopper(audioControl, tooltip, {
   <audio width="0" autoplay="false" height="0" src="serahstheme.mp3"></audio>
   <input type='range' class='timeline' max='100' value='0'>
 </div>
-  <div id="links" style="position: absolute; left: 5%; bottom: 5%;background-color: transparent; ">
+  <div id="links" style="position: absolute; left: 5%; bottom: 8%;background-color: transparent; ">
    <a href="https://portfolio.phungdao.com" target="_blank">
     <button id="portfolio" style="margin-left: 20px;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fff" class="bi bi-columns-gap" viewBox="0 0 16 16">
       <path d="M6 1v3H1V1h5zM1 0a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm14 12v3h-5v-3h5zm-5-1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5zM6 8v7H1V8h5zM1 7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H1zm14-6v7h-5V1h5zm-5-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1h-5z"/>
     </svg></button>
     <p style="padding: 5px 5px; margin-left: 20px;">Portfolio</p></a>
   </div>
-    <div class="links2" style="position: absolute; left: 5%; bottom: 10%;background-color: transparent">   
+    <div class="links2" style="position: absolute; left: 5%; bottom: 12%;background-color: transparent">   
 
       <a href="https://rsm.io/phung" target="_blank">
         <button id="resume"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fff" class="bi bi-r-square-fill" viewBox="0 0 16 16">

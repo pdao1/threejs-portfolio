@@ -29,7 +29,7 @@ renderer.render( scene, camera )
 const loadingManager = new THREE.LoadingManager();
 loadingManager.onLoad = function(){
 	setTimeout(function(){
-	$('#loading').hide();
+	$('#load').hide();
 	$('canvas').show();
 	$('#tooltip').show();
 	$('canvas').css('opacity', '.40')
@@ -50,16 +50,20 @@ loadingManager.onLoad = function(){
 		$('canvas').css('opacity', '.90')
 	}, 2500)
 	setTimeout(function(){
-	
+		
 		$('canvas').css('opacity', '1.0')
 	}, 3000)
+
+	setTimeout(function(){
+		$('#tooltip').hide();
+	}, 7000)
 	
 
 
 	// $(document).ready(function(){
 	// 	// setTimeout(function(){
 	// 	// $('#typing, #typing2, #typing3').css('border-right', '.15em solid orange')
-	// 	// $('#tooltip').hide();
+	// 	// 
 	// 	// typing();
 	// 	// }, 5000)
 	// 	setTimeout(function(){
