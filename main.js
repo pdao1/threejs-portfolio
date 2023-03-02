@@ -119,21 +119,21 @@ loadingManager.onLoad = function(){
 // 		}, 55000)
 // })
 
-var i = 0;
-// var e = 0;
-// var a = 0; 
-var txt = 'There seems to be a kind of order in the universe…in the movement of the stars and the turning of the Earth and the changing of the seasons. But human life is almost pure chaos. Everyone takes his stance, asserts his own right and feelings, mistaking the motives of others, and his own.'
-// var txt2 = 'Presented is my interactive rendition of the inner & outer solar system, built in Three.js'
-// var txt3 = 'My full portfolio and additional information in the links below. Thank you!'
-var speed = 50;
+// var i = 0;
+// // var e = 0;
+// // var a = 0; 
+// var txt = 'There seems to be a kind of order in the universe…in the movement of the stars and the turning of the Earth and the changing of the seasons. But human life is almost pure chaos. Everyone takes his stance, asserts his own right and feelings, mistaking the motives of others, and his own.'
+// // var txt2 = 'Presented is my interactive rendition of the inner & outer solar system, built in Three.js'
+// // var txt3 = 'My full portfolio and additional information in the links below. Thank you!'
+// var speed = 50;
 
-function typing() {
-  if (i < txt.length) {
-    document.getElementById("typing").innerHTML += txt.charAt(i);
-    i++;
-    setTimeout(typing, speed);
-	} 
-}
+// function typing() {
+//   if (i < txt.length) {
+//     document.getElementById("typing").innerHTML += txt.charAt(i);
+//     i++;
+//     setTimeout(typing, speed);
+// 	} 
+// }
 // function typing2() {
 //   if (e < txt2.length) {
 //     document.getElementById("typing2").innerHTML += txt2.charAt(e);
