@@ -27,35 +27,31 @@ camera.position.setX(600);
 
 renderer.render( scene, camera )
 const loadingManager = new THREE.LoadingManager();
-loadingManager.onLoad = function(){
-	setTimeout(function(){
-	$('#load').hide();
-	$('canvas').show();
-	$('#tooltip').show();
-	$('canvas').css('opacity', '.40')
-	}, 1500)
-	setTimeout(function(){
-		$('canvas').css('opacity', '.50')
-	}, 1750)
-	setTimeout(function(){
-		$('canvas').css('opacity', '.60')
-	}, 2000)
-	setTimeout(function(){
-		$('canvas').css('opacity', '.70')
-	}, 2250)
-	setTimeout(function(){
-		$('canvas').css('opacity', '.80')
-	}, 2500)
-	setTimeout(function(){
-		$('canvas').css('opacity', '.90')
-	}, 2500)
-	setTimeout(function(){
-		
-		$('canvas').css('opacity', '1.0')
-	}, 3000)
-	setTimeout(function(){
-		$('#tooltip').hide();
-	}, 7000)
+loadingManager.onLoad = function () {
+  $('#enter-btn').on('click', function () {
+    // Start music
+    toggleAudio(); // This calls your existing play function
+
+    // Hide loading screen
+    $('#load').fadeOut(1000);
+    
+    // Show canvas and tooltip, fade in opacity
+    $('canvas').show().css('opacity', '0.2');
+    $('#tooltip').fadeIn();
+
+    let opacities = ['.4', '.5', '.6', '.7', '.8', '.9', '1.0'];
+    opacities.forEach((val, i) => {
+      setTimeout(() => {
+        $('canvas').css('opacity', val);
+      }, 500 + i * 250);
+    });
+
+    setTimeout(() => {
+      $('#tooltip').fadeOut();
+    }, 7000);
+  });
+};
+
 	
 
 
@@ -79,7 +75,7 @@ loadingManager.onLoad = function(){
 	// 	}, 22500)
 	// })
 	
-};
+// };
 
 
 // setTimeout(function(){
