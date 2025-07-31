@@ -28,29 +28,30 @@ camera.position.setX(600);
 renderer.render( scene, camera )
 const loadingManager = new THREE.LoadingManager();
 loadingManager.onLoad = function () {
-  $('#enter-btn').on('click', function () {
-    // Start music
-    toggleAudio(); // This calls your existing play function
+  // Immediately fade in canvas and tooltip
+  $('#load').fadeOut(1000);
 
-    // Hide loading screen
-    $('#load').fadeOut(1000);
-    
-    // Show canvas and tooltip, fade in opacity
-    $('canvas').show().css('opacity', '0.2');
-    $('#tooltip').fadeIn();
+  $('canvas').show().css('opacity', '0.2');
+  $('#tooltip').fadeIn();
 
-    let opacities = ['.4', '.5', '.6', '.7', '.8', '.9', '1.0'];
-    opacities.forEach((val, i) => {
-      setTimeout(() => {
-        $('canvas').css('opacity', val);
-      }, 500 + i * 250);
-    });
-
+  let opacities = ['.4', '.5', '.6', '.7', '.8', '.9', '1.0'];
+  opacities.forEach((val, i) => {
     setTimeout(() => {
-      $('#tooltip').fadeOut();
-    }, 7000);
+      $('canvas').css('opacity', val);
+    }, 500 + i * 250);
   });
-};
+
+  setTimeout(() => {
+    $('#tooltip').fadeOut();
+  }, 7000);
+
+  // Set up one-time interaction listener to start music
+  const interactionHandler = () => {
+    toggleAudio();
+    // Remove all listeners after first interaction
+    document.removeEventListener('click', interactionHandler);
+    document.removeEventListener('keydown', interact
+
 
 	
 
