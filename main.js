@@ -29,8 +29,15 @@ renderer.render( scene, camera )
 const loadingManager = new THREE.LoadingManager();
 loadingManager.onLoad = function () {
   // Immediately fade in canvas and tooltip
-  $('#load').fadeOut(1000);
+// Show the quote
+$('#load').css('opacity', '1');
 
+// Delay before fading out quote and fading in canvas
+setTimeout(() => {
+  // Fade out the quote (and the dark background with it)
+  $('#load').css('opacity', '0');
+
+  // Then begin canvas fade-in
   $('canvas').show().css('opacity', '0.2');
   $('#tooltip').fadeIn();
 
@@ -38,12 +45,14 @@ loadingManager.onLoad = function () {
   opacities.forEach((val, i) => {
     setTimeout(() => {
       $('canvas').css('opacity', val);
-    }, 500 + i * 250);
+    }, i * 250);
   });
 
   setTimeout(() => {
     $('#tooltip').fadeOut();
   }, 7000);
+}, 7000); // ← delay increased to 7 seconds instead of 4
+
 
   // Set up one-time interaction listener to start music
   const interactionHandler = () => {
