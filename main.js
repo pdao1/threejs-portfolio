@@ -50,11 +50,18 @@ loadingManager.onLoad = function () {
     toggleAudio();
     // Remove all listeners after first interaction
     document.removeEventListener('click', interactionHandler);
-    document.removeEventListener('keydown', interact
+    document.removeEventListener('keydown', interactionHandler);
+    document.removeEventListener('mousemove', interactionHandler);
+    document.removeEventListener('touchstart', interactionHandler);
+    document.removeEventListener('scroll', interactionHandler);
+  };
 
-
-	
-
+  document.addEventListener('click', interactionHandler);
+  document.addEventListener('keydown', interactionHandler);
+  document.addEventListener('mousemove', interactionHandler);
+  document.addEventListener('touchstart', interactionHandler);
+  document.addEventListener('scroll', interactionHandler);
+};
 
 	// $(document).ready(function(){
 	// 	// setTimeout(function(){
