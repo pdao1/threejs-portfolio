@@ -344,7 +344,7 @@ const material12 = new THREE.MeshStandardMaterial( {
 
 const ort = new THREE.Mesh( geometry12, material12)
 ort.position.z = 30;
-ort.position.setX(500)
+ort.position.setX(1000)
 scene.add(ort)
 
 var starGeometry = new THREE.SphereGeometry(2000, 50, 50);
@@ -367,7 +367,7 @@ scene.add(starField);
 const ambientLight = new THREE.AmbientLightProbe(0xFFFFFF, 0.7);
 ambientLight.position.set(-450, 100, 30)
 
-var focus = new THREE.Vector3(450,100,0);
+
 
 const directionalLight = new THREE.DirectionalLight(0xFFFFFF, .2);
 directionalLight.position.set(-400, 100, 0);
@@ -426,12 +426,19 @@ let theta2 = 0;
 let dTheta = 5 * Math.PI / 10000  * - 1
 let dTheta2 = 15 * Math.PI / 10000  * - 1
 
+let camTheta = 45;        // angle in radians
+let camRadius = 1000;    // starting zoom radius
+let dCamTheta = 0.0005;   // rotation speed
+let dRadius = 0.05;       // zoom-out rate
+let camHeight = -100;     // Y elevation (optional)
+
+var focus = new THREE.Vector3(400,100,0);
 // recursion to repeat animation and register changes between frames
 function animate() {
 	requestAnimationFrame( animate );
-	const dx = 0.13;
-	const dy = 0.45;  
-	const dz =  0.35;
+	// const dx = 0.13;
+	// const dy = 0.45;  
+	// const dz =  0.35;
 
 	theta += dTheta
 	theta2 += dTheta2
@@ -443,66 +450,77 @@ function animate() {
 	moon.position.z = 1230 * Math.sin(theta + 20) 
 
 
-	earth.rotation.x += 0.005;
-	earth.rotation.y += 0.005;
-	earth.rotation.z += 0.001;
-	earth.position.x = 1200 * Math.cos(theta)
-	earth.position.z = 1200 * Math.sin(theta)
+	earth.rotation.x += 0.0001;
+	earth.rotation.y += 0.00005;
+	earth.rotation.z += 0.0003;
+	earth.position.x = 1300 * Math.cos(theta)
+	earth.position.z = 1300 * Math.sin(theta)
 
 	clouds.rotation.x += 0.0010
 	clouds.rotation.z += 0.005;
-	clouds.position.x =  1200 * Math.cos(theta) 
-	clouds.position.z = 1200 * Math.sin(theta)
+	clouds.position.x =  1300 * Math.cos(theta) 
+	clouds.position.z = 1300 * Math.sin(theta)
 
 	sun.rotation.x = 0;
 	sun.rotation.y = 1;
 	sun.rotation.z = 0;
 
-  venus.rotation.x += 0.000005;
+  	venus.rotation.x += 0.000005;
 	venus.rotation.y += 0.005;
 	venus.rotation.z += 0.00001;
-	venus.position.x = 900 * Math.cos(theta)
-	venus.position.z = 900 * Math.sin(theta)
+	venus.position.x = 990 * Math.cos(theta)
+	venus.position.z = 990 * Math.sin(theta)
 
 	mercury.rotation.x += 0.00005;
 	mercury.rotation.y += 0.0005
 	mercury.rotation.z += 0.0001;
-	mercury.position.x = 850 * Math.cos(theta2)
-	mercury.position.z = 850 * Math.sin(theta2)
+	mercury.position.x = 900 * Math.cos(theta2)
+	mercury.position.z = 900 * Math.sin(theta2)
 	
 	mars.rotation.x += 0.005;
-	mars.position.x = 1500 * Math.cos(theta + 5) 
-	mars.position.z = 1500 * Math.sin(theta + 5) 
+	mars.position.x = 1600 * Math.cos(theta + 5) 
+	mars.position.z = 1600 * Math.sin(theta + 5) 
 
 	saturn.rotation.x += 0.0005;
 	saturn.rotation.y += 0.005;
 	saturn.rotation.z += 0.00001;	
-	saturn.position.x = 1800 * Math.cos(theta) 
-	saturn.position.z = 1800 * Math.sin(theta)
+	saturn.position.x = 2000 * Math.cos(theta) 
+	saturn.position.z = 2000 * Math.sin(theta)
 
 	saturnRing.rotation.z += 0.005;
-	saturnRing.position.x = 1800 * Math.cos(theta) 
-	saturnRing.position.z = 1800 * Math.sin(theta) 
+	saturnRing.position.x = 2000 * Math.cos(theta) 
+	saturnRing.position.z = 2000 * Math.sin(theta) 
 
-	neptune.rotation.z += 0.010;
+	neptune.rotation.z += 0.006;
 	neptune.position.x = 2300 * Math.cos(theta + 10) 
 	neptune.position.z = 2200 * Math.sin(theta + 10)
 
-	uranus.position.x = 2400 * Math.cos(theta) 
-	uranus.position.z = 2000 * Math.sin(theta)  
+	uranus.position.x = 2600 * Math.cos(theta) 
+	uranus.position.z = 2200 * Math.sin(theta)  
 
-	jupiter.position.x = 2000 * Math.cos(theta + 5) 
-	jupiter.position.z = 2000 * Math.sin(theta + 5) 
+	jupiter.position.x = 2200 * Math.cos(theta + 5) 
+	jupiter.position.z = 2200 * Math.sin(theta + 5) 
 
-  starField.position.x += 0.05
+  	starField.position.x += 0.05
 	starField.position.z += 0.05
 
-	camera.position.x += dx;
-  camera.position.y += dy;
-  camera.position.z += dz;
+	// camera.position.x += dx;
+	// camera.position.y += dy;
+	// camera.position.z += dz;
+
+	camTheta -= dCamTheta; 
+	camRadius += dRadius; 
+
+	camera.position.x = camRadius * Math.cos(camTheta);
+	camera.position.z = camRadius * Math.sin(camTheta);
+	camera.position.y = camHeight;
+
 	camera.lookAt(focus);
+
 
 	controls.update()
 	renderer.render( scene, camera );
 }
+
+
 animate();
